@@ -5,7 +5,9 @@
 
 bool HelloWorldApp::OnInit()
 {
-    HelloWorldFrame *frame = new HelloWorldFrame("Hello World", wxPoint(50, 50), wxSize(450, 340));
+    int width = wxGetDisplaySize().GetWidth() / 2;
+    int height = width * 3 / 4;
+    HelloWorldFrame *frame = new HelloWorldFrame("Hello World", wxPoint(-1, -1), wxSize(width, height));
     frame->Show(true);
     return true;
 }

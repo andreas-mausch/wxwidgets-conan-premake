@@ -11,6 +11,9 @@ graph_info.json
 Makefile
 WxWidgetsConanPremake.make
 
+WxWidgetsConanPremake.sln
+WxWidgetsConanPremake.vcxproj
+
 # Target
 
 bin/

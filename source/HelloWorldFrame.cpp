@@ -24,6 +24,7 @@ HelloWorldFrame::HelloWorldFrame(const wxString& title, const wxPoint& pos, cons
     SetMenuBar( menuBar );
     CreateStatusBar();
     SetStatusText( "Welcome to wxWidgets!" );
+    CentreOnScreen();
 }
 void HelloWorldFrame::OnExit(wxCommandEvent& event)
 {

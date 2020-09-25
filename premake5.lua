@@ -19,3 +19,7 @@ workspace("WxWidgetsConanPremake")
         filter "configurations:Release"
         defines { "NDEBUG" }
         optimize "On"
+
+        filter "system:Windows"
+        toolset "v141_xp"
+        staticruntime "On"
