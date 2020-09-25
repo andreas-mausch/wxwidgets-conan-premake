@@ -1,20 +1,36 @@
+Sample project to test the compatibility of wxWidgets, conan and premake
+in order to build cross-platform GUI applications.
+
 # Prerequisites
 
 - Conan
 - Premake 5
 
+## Conan profile
+
 ```
 conan profile update settings.compiler.libcxx=libstdc++11 default
+```
+
+### Windows settings
+
+```
 conan profile update settings.arch=x86 default
 conan profile update settings.compiler.toolset=v141_xp default
 conan profile update settings.compiler.runtime=MT default
+```
 
+## Conan remote
+
+```
 conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
-
-conan install . --build=missing
 ```
 
 # Build
+
+```
+conan install . --build=missing
+```
 
 ## Linux
 
