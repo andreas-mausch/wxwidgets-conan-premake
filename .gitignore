@@ -1,0 +1,17 @@
+# Conan
+
+conan.lock
+conanbuildinfo.txt
+conanbuildinfo.premake.lua
+conaninfo.txt
+graph_info.json
+
+# Premake
+
+Makefile
+WxWidgetsConanPremake.make
+
+# Target
+
+bin/
+obj/
