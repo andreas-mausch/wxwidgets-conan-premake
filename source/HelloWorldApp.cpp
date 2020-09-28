@@ -4,13 +4,12 @@
 #include "HelloWorldApp.h"
 #include "HelloWorldFrame.h"
 
+extern void InitXmlResource();
+
 bool HelloWorldApp::OnInit()
 {
     wxXmlResource::Get()->InitAllHandlers();
-    if (!wxXmlResource::Get()->Load("frame.xrc"))
-    {
-        return false;
-    }
+    InitXmlResource();
 
     HelloWorldFrame *frame = new HelloWorldFrame(NULL);
     frame->Show(true);

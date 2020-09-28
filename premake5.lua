@@ -10,7 +10,9 @@ workspace("WxWidgetsConanPremake")
 
         linkoptions { conan_exelinkflags }
 
-        files { "**.h", "**.cpp" }
+        files { "**.h", "**.cpp", "generated/Resources.cpp" }
+
+        prebuildcommands { "mkdir -p generated && wxrc -c resources/*.xrc -o generated/Resources.cpp" }
 
         filter "configurations:Debug"
         defines { "DEBUG" }
