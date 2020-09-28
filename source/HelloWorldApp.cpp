@@ -1,13 +1,19 @@
 #include <wx/wx.h>
+#include <wx/xrc/xmlres.h>
 
 #include "HelloWorldApp.h"
 #include "HelloWorldFrame.h"
 
 bool HelloWorldApp::OnInit()
 {
-    int width = wxGetDisplaySize().GetWidth() / 2;
-    int height = width * 3 / 4;
-    HelloWorldFrame *frame = new HelloWorldFrame("Hello World", wxPoint(-1, -1), wxSize(width, height));
+    wxXmlResource::Get()->InitAllHandlers();
+    if (!wxXmlResource::Get()->Load("frame.xrc"))
+    {
+        return false;
+    }
+
+    HelloWorldFrame *frame = new HelloWorldFrame(NULL);
     frame->Show(true);
+
     return true;
 }

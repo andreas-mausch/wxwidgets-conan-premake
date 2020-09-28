@@ -1,40 +1,32 @@
 #include <wx/wx.h>
+#include <wx/xrc/xmlres.h>
 
 #include "HelloWorldFrame.h"
 
 wxBEGIN_EVENT_TABLE(HelloWorldFrame, wxFrame)
-    EVT_MENU(ID_Hello,   HelloWorldFrame::OnHello)
+    EVT_MENU(XRCID("ID_Hello"),   HelloWorldFrame::OnHello)
     EVT_MENU(wxID_EXIT,  HelloWorldFrame::OnExit)
     EVT_MENU(wxID_ABOUT, HelloWorldFrame::OnAbout)
 wxEND_EVENT_TABLE()
 
-HelloWorldFrame::HelloWorldFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
-        : wxFrame(NULL, wxID_ANY, title, pos, size)
+HelloWorldFrame::HelloWorldFrame(wxWindow* parent)
 {
-    wxMenu *menuFile = new wxMenu;
-    menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
-                     "Help string shown in status bar for this menu item");
-    menuFile->AppendSeparator();
-    menuFile->Append(wxID_EXIT);
-    wxMenu *menuHelp = new wxMenu;
-    menuHelp->Append(wxID_ABOUT);
-    wxMenuBar *menuBar = new wxMenuBar;
-    menuBar->Append( menuFile, "&File" );
-    menuBar->Append( menuHelp, "&Help" );
-    SetMenuBar( menuBar );
-    CreateStatusBar();
-    SetStatusText( "Welcome to wxWidgets!" );
-    CentreOnScreen();
+    wxXmlResource::Get()->LoadFrame(this, parent, wxT("HelloWorldFrame"));
+    SetStatusText("Welcome to wxWidgets!");
 }
+
 void HelloWorldFrame::OnExit(wxCommandEvent& event)
 {
-    Close( true );
+    Close(true);
 }
+
 void HelloWorldFrame::OnAbout(wxCommandEvent& event)
 {
-    wxMessageBox( "This is a wxWidgets' Hello world sample",
-                  "About Hello World", wxOK | wxICON_INFORMATION );
+    wxMessageBox("This is a wxWidgets' Hello world sample",
+                 "About Hello World",
+                 wxOK | wxICON_INFORMATION);
 }
+
 void HelloWorldFrame::OnHello(wxCommandEvent& event)
 {
     wxLogMessage("Hello world from wxWidgets!");
