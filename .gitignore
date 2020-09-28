@@ -1,6 +1,7 @@
 # Conan
 
 conan.lock
+conan_imports_manifest.txt
 conanbuildinfo.txt
 conanbuildinfo.premake.lua
 conaninfo.txt
@@ -13,6 +14,7 @@ WxWidgetsConanPremake.make
 
 WxWidgetsConanPremake.sln
 WxWidgetsConanPremake.vcxproj
+WxWidgetsConanPremake.vcxproj.filters
 
 # Target
 
