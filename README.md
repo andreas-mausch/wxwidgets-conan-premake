@@ -1,6 +1,8 @@
 Sample project to test the compatibility of wxWidgets, conan and premake
 in order to build cross-platform GUI applications for Linux, macOS and Windows.
 
+(Check the `xrc` branch for [XML Based Resource System](https://docs.wxwidgets.org/3.1/overview_xrc.html))
+
 # Prerequisites
 
 - Conan
