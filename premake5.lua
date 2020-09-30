@@ -12,7 +12,7 @@ workspace("WxWidgetsConanPremake")
 
         files { "**.h", "**.cpp", "generated/Resources.cpp" }
 
-        os.mkdir("generated")
+        prebuildcommands { "{MKDIR} generated" }
 
         filter "system:Windows"
         prebuildcommands { "\"./bin/wxrc.exe\" /c resources/*.xrc /o generated/Resources.cpp" }
