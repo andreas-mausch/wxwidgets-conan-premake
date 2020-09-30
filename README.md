@@ -1,5 +1,5 @@
 Sample project to test the compatibility of wxWidgets, conan and premake
-in order to build cross-platform GUI applications.
+in order to build cross-platform GUI applications for Linux, macOS and Windows.
 
 # Prerequisites
 
@@ -8,11 +8,13 @@ in order to build cross-platform GUI applications.
 
 ## Conan profile
 
+### Linux profile
+
 ```
 conan profile update settings.compiler.libcxx=libstdc++11 default
 ```
 
-### Windows settings
+### Windows profile
 
 ```
 conan profile update settings.arch=x86 default
@@ -32,10 +34,10 @@ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-c
 conan install . --build=missing
 ```
 
-## Linux
+## Linux & Mac
 
 ```
-premake5 gmake
+premake5 gmake2
 make
 ```
 
