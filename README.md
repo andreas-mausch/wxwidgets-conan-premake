@@ -53,16 +53,6 @@ msbuild /p:Platform=Win32
 
 # My personal conclusion
 
-I always thought wxWidgets is some very old technology and pretty much deprecated.
-I was wrong with that.
+I've written a blog post about this experiment:
 
-I really really dislike some things, like the `wxBEGIN_EVENT_TABLE` declaration for example (Macros :cold_sweat:).
-
-The 'Hello World' wxWidgets on Linux results in a 7mb executable. Imo that's bloated, and imo wxWidgets carries
-a lot of stuff which might be convenient, but doesn't belong in a pure GUI lib (implementations of jpeg, png, zlib, html, webview (a complete browser!), ..).
-I'm not quite sure why the linker doesn't discard the unused bits.
-
-Check out the `conanfile.txt` for my personal preferences.
-
-But I still like it better than Qt and there are not that many choices for a GUI lib out there.
-So it is okayish to me until there is something better.
+[https://andreas-mausch.de/blog/2020/09/29/wxwidgets/](https://andreas-mausch.de/blog/2020/09/29/wxwidgets/)
